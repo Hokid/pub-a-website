@@ -58,40 +58,27 @@
               </style>
               <i class="arrow"></i>
 
-              <div class="nav__dropdown-box">
+              <div class="nav__dropdown-box nav__dropdown-box--right">
                 <div class="nav__box-actions"><button class="min-btn min-btn--close"></button>
                 </div>
                 <form class="form u-clear" action="">
-                  <label class="label form__field-caption" for="signInLogin">Логин</label>
-                  <input class="txt-field form__field" id="signInLogin" type="text">
-                  <label class="label form__field-caption" for="signInPassword">Пароль</label>
-                  <input class="txt-field form__field" id="signInPassword" type="text">
+                  <label class="label form__field-caption" for="email">E-mail</label>
+                  <input class="txt-field form__field" id="email" type="text">
+                  <label class="label form__field-caption" for="login">Логин</label>
+                  <input class="txt-field form__field" id="login" type="text">
+                  <label class="label form__field-caption" for="password">Пароль</label>
+                  <input class="txt-field form__field" id="password" type="text">
                   <fieldset class="fieldset form__fieldset">
                     <legend class="legend">Опции</legend>
-                    <label class="option option--responsive form__option" for="signInRememberMe"><input id="signInRememberMe" type="checkbox" hidden><i class="pseudo-checkbox option__checkbox"></i><span>Запомнить меня</span></label><label class="option option--responsive form__option" for="signInRecoverPassword"><input id="signInRecoverPassword" type="checkbox" hidden><i class="pseudo-checkbox is-checked option__checkbox"></i><span>Восстановить пароль</span></label>
+                    <label class="option option--responsive form__option" for="rememberMe"><input id="rememberMe" type="checkbox" hidden><i class="pseudo-checkbox option__checkbox"></i><span>Запомнить меня</span></label><label class="option option--responsive form__option" for="recoverPassword"><input id="recoverPassword" type="checkbox" hidden><i class="pseudo-checkbox is-checked option__checkbox"></i><span>Восстановить пароль</span></label>
                   </fieldset>
-                  <div class="form__actions"><button class="btn btn--ok">ОK</button>
-                  </div>
-                </form>
-              </div>
-
-            </li><li class="nav__item nav__item--btn-container">
-
-              <button class="btn btn--default" type="button"><i class="ico ico--add-2 btn__glyph"></i><span>Регистрация</span>
-              </button>
-
-              <div class="nav__dropdown-box u-hide">
-                <div class="nav__box-actions"><button class="min-btn min-btn--close"></button>
-                </div>
-                <form class="form u-clear" action="">
-                  <label class="label form__field-caption" for="signUpEmail">E-mail</label>
-                  <input class="txt-field form__field" id="signUpEmail" type="text">
-                  <label class="label form__field-caption" for="signUpLogin">Логин</label>
-                  <input class="txt-field form__field" id="signUpLogin" type="text">
-                  <label class="label form__field-caption" for="signUpPassword">Пароль</label>
-                  <input class="txt-field form__field" id="signUpPassword" type="text">
-                  <div class="form__actions"><button class="btn btn--ok">ОK</button>
-                  </div>
+                  <ul class="form__actions">
+                    <li class="form__action">
+                      <button class="btn btn--ok">ОK</button>
+                    </li><li class="form__action">
+                      <button class="btn btn--default">Создать</button>
+                    </li>
+                  </ul>
                 </form>
               </div>
 
@@ -182,8 +169,25 @@
             </div>
             <div class="post__actions"></div>
           </div>
+
           <div class="comments">
+
             <hr>
+            <h2 class="comments__title">Добавить комментарий</h2>
+            <div class="comments__add">
+              <a href="#" class="comments__ava">
+                <img src="img/re-l.png" alt="Re-l">
+              </a>
+              <form class="comments__body">
+                <textarea class="textarea comments__textarea" name="commentTxt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur consectetur, veritatis reprehenderit temporibus modi ratione nobis fugiat nihil expedita aspernatur voluptatum quisquam facilis natus fuga adipisci eligendi dolorum, soluta recusandae.</textarea>
+                <ul class="comments__actions">
+                  <li class="comments__action">
+                    <button class="btn btn--ok">Добавить</button>
+                  </li>
+                </ul>
+              </form>
+            </div>
+
             <h2 class="comments__title">Комментарии</h2>
             <ul class="comments__box">
               <li class="comments__item">
@@ -194,8 +198,16 @@
                   <a class="comments__owner" href="#">Re-l</a>
                   <div class="comments__meta">21-13-23 / 23:02</div>
                   <p class="comments__txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur consectetur, veritatis reprehenderit temporibus modi ratione nobis fugiat nihil expedita aspernatur voluptatum quisquam facilis natus fuga adipisci eligendi dolorum, soluta recusandae.</p>
+                  <ul class="comments__actions">
+                    <li class="comments__action">
+                      <button class="btn btn--default" type="button">Ответить</button>
+                    </li><li class="comments__action">
+                      <button class="btn btn--default" type="button">Изменить</button>
+                    </li><li class="comments__action">
+                      <button class="btn btn--default" type="button">Удалить</button>
+                    </li>
+                  </ul>
                 </div>
-                <div class="comments__actions"></div>
               </li>
               <li class="comments__item"></li>
               <li class="comments__item"></li>
