@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <title>Блог</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,700">
+</head>
+<body>
+  <div class="u-push-footer-down">
+    <header class="l-header">
+      <div class="l-container u-clearfix">
+
+
+
+        <a href="#" class="logo u-pull-left"><i class="ico ico--logo-head logo__glyph"></i></a>
+
+
+
+        <nav class="nav u-pull-left"><button class="nav__toggle" type="button"><i class="ico ico--nav"></i>
+          </button>
+
+          <ul class="nav__box nav__box--responsive"><li class="nav__item"><a class="nav__link" href="#">Портфолио</a></li><li class="nav__item"><a class="nav__link" href="#">Блог</a></li><li class="nav__item"><a class="nav__link" href="#">Контакты</a></li><li class="nav__item"><a class="nav__link" href="#">Обо мне</a></li>
+          </ul>
+
+        </nav>
+
+
+
+        <div class="nav u-pull-right">
+          <ul class="nav__box">
+            <li class="nav__item nav__item--btn-container">
+
+              <button class="btn btn--default" type="button"><i class="ico ico--checkmark-2 btn__glyph"></i><span>Вход</span>
+              </button>
+
+              <style>
+                .arrow {
+                  position: absolute;
+                  top: 100%;
+                  left: 25px;
+                  margin-top: -6px;
+                  border: 10px solid transparent;
+                  border-bottom-color: hsl(0,0%,93%);
+                  z-index: 1;
+                }
+                .arrow:before {
+                  content: "";
+                  position: absolute;
+                  top: -9px;
+                  left: -10px;
+                  border: 10px solid transparent;
+                  border-bottom-color: hsl(0,0%,99%);
+                  z-index: 2;
+                }
+              </style>
+              <i class="arrow"></i>
+
+              <div class="nav__dropdown-box">
+                <div class="nav__box-actions"><button class="min-btn min-btn--close"></button>
+                </div>
+                <form class="form u-clear" action="">
+                  <label class="label form__field-caption" for="signInLogin">Логин</label>
+                  <input class="txt-field form__field" id="signInLogin" type="text">
+                  <label class="label form__field-caption" for="signInPassword">Пароль</label>
+                  <input class="txt-field form__field" id="signInPassword" type="text">
+                  <fieldset class="fieldset form__fieldset">
+                    <legend class="legend">Опции</legend>
+                    <label class="option option--responsive form__option" for="signInRememberMe"><input id="signInRememberMe" type="checkbox" hidden><i class="pseudo-checkbox option__checkbox"></i><span>Запомнить меня</span></label><label class="option option--responsive form__option" for="signInRecoverPassword"><input id="signInRecoverPassword" type="checkbox" hidden><i class="pseudo-checkbox is-checked option__checkbox"></i><span>Восстановить пароль</span></label>
+                  </fieldset>
+                  <div class="form__actions"><button class="btn btn--ok">ОK</button>
+                  </div>
+                </form>
+              </div>
+
+            </li><li class="nav__item nav__item--btn-container">
+
+              <button class="btn btn--default" type="button"><i class="ico ico--add-2 btn__glyph"></i><span>Регистрация</span>
+              </button>
+
+              <div class="nav__dropdown-box u-hide">
+                <div class="nav__box-actions"><button class="min-btn min-btn--close"></button>
+                </div>
+                <form class="form u-clear" action="">
+                  <label class="label form__field-caption" for="signUpEmail">E-mail</label>
+                  <input class="txt-field form__field" id="signUpEmail" type="text">
+                  <label class="label form__field-caption" for="signUpLogin">Логин</label>
+                  <input class="txt-field form__field" id="signUpLogin" type="text">
+                  <label class="label form__field-caption" for="signUpPassword">Пароль</label>
+                  <input class="txt-field form__field" id="signUpPassword" type="text">
+                  <div class="form__actions"><button class="btn btn--ok">ОK</button>
+                  </div>
+                </form>
+              </div>
+
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </header>
+    <div class="l-content">
+      <div class="l-container u-clearfix">
+        <div class="l-main-col">
+          <div class="post post--narrow">
+            <div class="post__head">
+              <h1>Lorem ipsum dolor sit amet.</h1>
+            </div>
+            <div class="post__meta">15.03.2015 / 21:10</div>
+            <div class="post__body">
+              <h3>p</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus minus officia aut nemo dolorem. Aperiam tenetur, itaque nisi dolore officiis accusantium, neque deleniti saepe pariatur minus! Repellat ducimus possimus consectetur?</p>
+              <h3>dfn, del, ins</h3>
+              <p><dfn>Lorem ipsum dolor</dfn> sit amet, consectetur adipisicing elit. Nihil deleniti dolore sed quae magni, quia inventore sunt in nulla harum ut, <del cite="http://blablabla.com" datatime="15-03-2015T21:41:04+04:00">aliquid ex ipsum laborum</del>, <ins cite="http://blablabla.com" datatime="15-03-2015T21:44:04+04:00">eligendi voluptas molestias nemo quaerat!</ins></p>
+              <h3>i, kbd, mark, em</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur <i>adipisicing elit</i>. Hic numquam quia facilis dicta totam similique dolorem consequuntur <kbd>Alt+Ctrl+A</kbd> necessitatibus sed magnam saepe perferendis cupiditate expedita molestias debitis dignissimos eum accusamus doloribus, corporis, officia architecto? <mark>Repudiandae nihil</mark> eaque magnam cum <em>incidunt dolorum perferendis, esse quia</em>.</p>
+              <h3>Address</h3>
+              <address>Recusandae asperiores laudantium quae rerum <a href="#">deleniti</a> est.</address>
+              <h3>abbr, a, q, b</h3>
+              <p><abbr title="Lorem ipsum dolor">LRI</abbr>, consectetur adipisicing elit. Hic numquam quia facilis dicta totam similique dolorem <a href="#">consequuntur(Ссылка)</a> necessitatibus sed magnam saepe perferendis cupiditate expedita <q>molestias debitis dignissimos eum accusamus doloribus</q>, corporis, officia architecto? <b>Repudiandae</b> nihil eaque magnam cum incidunt dolorum perferendis, esse quia. Recusandae asperiores laudantium quae rerum deleniti est.</p>
+              <h3>hr</h3>
+              <hr>
+              <h3>meter</h3>
+              <meter value="10" min="0" max="100" low="20" high="90" optimum="77">Плохо</meter>
+              <meter value="40" min="0" max="100" low="20" high="90" optimum="77">Норм</meter>
+              <meter value="75" min="0" max="100" low="20" high="90" optimum="77">Ух!</meter>
+              <meter value="91" min="0" max="100" low="20" high="90" optimum="77">Вау!</meter>
+              <meter value="100" min="0" max="100" low="20" high="90" optimum="77">x_x</meter>
+              <h3>progress</h3>
+              <progress max="100" value="75"></progress>
+              <h3>ul</h3>
+              <ul>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, qui.</li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt accusamus repellendus, voluptatem non ex adipisci nulla minima consequatur ipsa tenetur.</li>
+                <li>Lorem ipsum dolor sit amet.</li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, rerum.</li>
+              </ul>
+              <h3>ol</h3>
+              <ol>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, qui.</li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt accusamus repellendus, voluptatem non ex adipisci nulla minima consequatur ipsa tenetur.</li>
+                <li>Lorem ipsum dolor sit amet.</li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, rerum.</li>
+              </ol>
+              <h3>pre</h3>
+              <pre>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae praesentium doloribus fuga deserunt sit reprehenderit dicta, vero natus porro optio quas vitae iure labore, tempora asperiores enim voluptatibus deleniti. Magnam!</pre>
+              <h3>blockquote</h3>
+              <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident nobis dolore ad, libero, incidunt distinctio nesciunt nulla optio autem, reiciendis, dolores aliquam nihil molestias ex adipisci assumenda saepe doloribus explicabo?</blockquote>
+              <h3>cite</h3>
+              <cite>http://blablabla.com/</cite>
+              <h3>s, small, strong, sub, sup, time</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta libero sapiente nam adipisci incidunt <s>ipsa numquam sunt beatae mollitia p</s>orro tenetur <small>perspiciatis error saepe,</small> quisquam at expedita <strong>vitae laborum</strong><sub>2</sub> quaerat<sup>3</sup> dolore dolorum delectus culpa tempore tempora <time>21-03-24 12:00</time>. Reprehenderit, ipsam. Ipsam, distinctio.</p>
+              <h3>var, code, samp</h3>
+              <p>  Lorem <var>ipsum</var> dolor sit<code>font-family: roboto,sans-serif</code>amet, consectetur adipisicing elit. Rerum aspernatur dolor dolorem, <samp>atque velit hic eveniet</samp> aliquam omnis accusamus, eius!</p>
+              <h3>pre > code</h3>
+              <pre><code>@mixin board( $color-bg:null, $color-border:null, $color-txt:null ) {
+  $color-border: hsl(238, 67%, 16%) !default;
+  $color-bg: #f5f5f5 !default;
+  $color-txt: $color-border !default;
+
+  background-color: $color-bg;
+  margin: 15px 0;
+  padding: 15px;
+  color: $color-txt;
+  border-left: 5px solid $color-border;
+}</code></pre>
+               <h3>pre > samp</h3>
+              <pre><samp>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto hic recusandae voluptate fugiat doloribus unde vero natus obcaecati provident iste.</samp></pre>
+              <h3>dl,dt,dd</h3>
+              <dl>
+                <dt>Lorem ipsum dolor sit.</dt>
+                <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo inventore ut perferendis qui vel laborum totam quasi, accusamus quisquam architecto!</dd>
+                <dt>Lorem ipsum dolor sit.</dt>
+                <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo inventore ut perferendis qui vel laborum totam quasi, accusamus quisquam architecto!</dd>
+                <dt>Lorem ipsum dolor sit.</dt>
+                <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo inventore ut perferendis qui vel laborum totam quasi, accusamus quisquam architecto!</dd>
+                <dt>Lorem ipsum dolor sit.</dt>
+                <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo inventore ut perferendis qui vel laborum totam quasi, accusamus quisquam architecto!</dd>
+              </dl>
+            </div>
+            <div class="post__actions"></div>
+          </div>
+          <div class="comments">
+            <hr>
+            <h2 class="comments__title">Комментарии</h2>
+            <ul class="comments__box">
+              <li class="comments__item">
+                <a href="#" class="comments__ava">
+                  <img src="img/re-l.png" alt="Re-l">
+                </a>
+                <div class="comments__body">
+                  <a class="comments__owner" href="#">Re-l</a>
+                  <div class="comments__meta">21-13-23 / 23:02</div>
+                  <p class="comments__txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur consectetur, veritatis reprehenderit temporibus modi ratione nobis fugiat nihil expedita aspernatur voluptatum quisquam facilis natus fuga adipisci eligendi dolorum, soluta recusandae.</p>
+                </div>
+                <div class="comments__actions"></div>
+              </li>
+              <li class="comments__item"></li>
+              <li class="comments__item"></li>
+            </ul>
+          </div>
+        </div>
+        <div class="l-sidebar">
+          <h1>Lorem ipsum dolor sit amet.</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non quaerat sint alias sapiente itaque, animi cum culpa optio dolorem molestias similique cupiditate nulla magnam blanditiis ut illum quos reiciendis maxime. Ut sequi inventore vero odit velit obcaecati voluptatibus perspiciatis optio doloremque, iste vel aliquam quae quo corporis id nobis ab perferendis autem sapiente, officiis molestias consequatur ipsam esse! Veniam ullam autem, aut, fugiat tenetur voluptates architecto. Nam dolores nesciunt est exercitationem placeat aspernatur, modi possimus minus fugit assumenda, necessitatibus eius? Quidem ratione accusantium, officia mollitia suscipit perspiciatis atque, consectetur sunt eveniet asperiores id. Tenetur sequi, dolores illo corporis! Aut dignissimos quis fugit eius, perspiciatis sed nam sapiente. Quas eos voluptatum corporis odit, distinctio ducimus aut dolores! Numquam labore vero laborum nulla natus, magni sint excepturi eum consequuntur! Commodi eveniet aut illum accusamus magni quibusdam aliquam omnis, inventore, est maxime ipsum quas minima sed unde asperiores. Rerum repudiandae, facere necessitatibus accusantium aspernatur laboriosam deserunt dolor architecto asperiores accusamus delectus possimus earum mollitia animi odit tempore in maxime, tempora sit molestiae. Odio voluptatem, deserunt minima modi nihil accusantium temporibus quos natus earum labore ducimus velit qui repellendus. Cumque voluptate molestiae cum dolore id ratione tempore, natus unde quia vel porro! Voluptatum, aperiam.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="l-footer">
+    <div class="l-container"></div>
+  </footer>
+</body>
+</html>
