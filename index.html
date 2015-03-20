@@ -155,6 +155,11 @@
 }</code></pre>
                <h3>pre > samp</h3>
               <pre><samp>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto hic recusandae voluptate fugiat doloribus unde vero natus obcaecati provident iste.</samp></pre>
+              <h3>Уведомления</h3>
+              <div class="msg msg--info">Информируещее</div>
+              <div class="msg msg--warning">Предупреждение</div>
+              <div class="msg msg--danger">Ошибка/Опасноть</div>
+              <div class="msg msg--success">Все отлично/Успешно прошло</div>
               <h3>dl,dt,dd</h3>
               <dl>
                 <dt>Lorem ipsum dolor sit.</dt>
@@ -190,6 +195,7 @@
 
             <h2 class="comments__title">Комментарии</h2>
             <ul class="comments__box">
+
               <li class="comments__item">
                 <a href="#" class="comments__ava">
                   <img src="img/re-l.png" alt="Re-l">
@@ -208,9 +214,88 @@
                     </li>
                   </ul>
                 </div>
+
+                <ul class="comments__box comments__box--nested">
+                  <hr>
+                  <li class="comments__item">
+                    <a href="#" class="comments__ava">
+                      <img src="img/re-l.png" alt="Re-l">
+                    </a>
+                    <div class="comments__body">
+                      <a class="comments__owner" href="#">Re-l</a>
+                      <div class="comments__meta">22-13-23 / 23:02</div>
+                      <p class="comments__txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, odit iusto voluptas consequatur? Harum adipisci iure, totam ipsum deserunt maiores distinctio tenetur, fugit dignissimos architecto dolores, molestias natus voluptates iste.</p>
+                      <ul class="comments__actions">
+                        <li class="comments__action">
+                          <button class="btn btn--default" type="button">Ответить</button>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <ul class="comments__box">
+                      <li class="comments__item">
+                        <a href="#" class="comments__ava">
+                          <img src="img/re-l.png" alt="Re-l">
+                        </a>
+                        <div class="comments__body">
+                          <a class="comments__owner" href="#">Re-l</a>
+                          <div class="comments__meta">22-13-23 / 23:02</div>
+                          <p class="comments__txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, odit iusto voluptas consequatur? Harum adipisci iure, totam ipsum deserunt maiores distinctio tenetur, fugit dignissimos architecto dolores, molestias natus voluptates iste.</p>
+                          <ul class="comments__actions">
+                            <li class="comments__action">
+                              <button class="btn btn--default" type="button">Ответить</button>
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
               </li>
-              <li class="comments__item"></li>
-              <li class="comments__item"></li>
+
+
+              <li class="comments__item">
+                <a href="#" class="comments__ava">
+                  <img src="img/re-l.png" alt="Re-l">
+                </a>
+                <div class="comments__body">
+                  <a class="comments__owner" href="#">Re-l</a>
+                  <div class="comments__meta">21-13-23 / 23:02</div>
+                  <p class="comments__txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur consectetur, veritatis reprehenderit temporibus modi ratione nobis fugiat nihil expedita aspernatur voluptatum quisquam facilis natus fuga adipisci eligendi dolorum, soluta recusandae.</p>
+                  <ul class="comments__actions">
+                    <li class="comments__action">
+                      <button class="btn btn--default" type="button">Ответить</button>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+
+              <li class="comments__item">
+                <div class="msg msg--info"><a class="comments__owner" href="#">Re-l</a> удалил свой комментарий</div>
+
+                <ul class="comments__box comments__box--nested">
+                  <hr>
+                  <li class="comments__item">
+                    <a href="#" class="comments__ava">
+                      <img src="img/re-l.png" alt="Re-l">
+                    </a>
+                    <div class="comments__body">
+                      <a class="comments__owner" href="#">Re-l</a>
+                      <div class="comments__meta">22-13-23 / 23:02</div>
+                      <p class="comments__txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, odit iusto voluptas consequatur? Harum adipisci iure, totam ipsum deserunt maiores distinctio tenetur, fugit dignissimos architecto dolores, molestias natus voluptates iste.</p>
+                      <ul class="comments__actions">
+                        <li class="comments__action">
+                          <button class="btn btn--default" type="button">Ответить</button>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div class="msg msg--info"><a class="comments__owner" href="#">Re-l</a> удалил свой комментарий</div>
+                  </li>
+                </ul>
+              </li>
+
             </ul>
           </div>
         </div>
