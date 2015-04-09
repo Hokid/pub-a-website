@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+
+  <head>
+    <title>Пост</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+  <!--   <![if !(lte IE 9)]>
+      <script>
+        if(RegExp && !navigator.userAgent.match(/MSIE [1-9]/))
+          document.documentElement.classList.add("IE");
+      </script>
+    <![endif]> -->
+    <!--[if lte IE 8]><script src ="js/lib/respond.min.js" type="text/javascript"></script><![endif]-->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,700">
+  </head>
+
+
+<body>
+
+  <div class="u-push-footer-down">
+
+    <div class="l-header">
+      <div class="l-container u-clearfix header">
+        <a href="#" class="logo header__logo u-pull-left">
+          <i class="ico ico--logo-head logo__ico"></i>
+        </a>
+
+        <div class="nav u-pull-left">
+          <ul class="nav__box">
+            <li class="nav__item">
+
+
+              <button class="btn btn--default nav__toggle js-nav-toggle" type="button">
+                <i class="ico ico--nav-1 btn__only-ico"></i>
+              </button>
+
+              <ul class="nav__box nav__box--respons js-dropdown">
+                <li class="nav__item nav__item--respons">
+                  <a class="nav__link nav__link--respons" href="index.html">Индекc</a>
+                </li><li class="nav__item nav__item--respons">
+                  <a class="nav__link nav__link--respons" href="post.html">Пост</a>
+                </li><li class="nav__item nav__item--respons">
+                  <a class="nav__link nav__link--respons" href="user-personal-page.html">Профиль Л.</a>
+                </li><li class="nav__item nav__item--respons">
+                  <a class="nav__link nav__link--respons" href="user-public-page.html">Профиль П.</a>
+                </li><li class="nav__item nav__item--respons">
+                  <a class="nav__link nav__link--respons" href="UI.html">UI</a>
+                </li>
+              </ul>
+
+            </li>
+          </ul>
+        </div>
+
+        <ul class="nav u-pull-right">
+
+          <li class="nav__item u-half-leading-s u-h-gutter-s">
+
+            <button class="btn btn--default js-nav-toggle" type="button">
+              <i class="ico ico--checkmark-2 btn__ico"></i>Вход
+            </button>
+
+            <div class="dropdown-box dropdown-box--right nav__dropdown-box js-dropdown js-box" data-box="0">
+
+              <div class="dropdown-box__actions">
+                <button class="round-btn round-btn--danger js-box-close" data-owner-box="0" type="button">
+                  <i class="ico ico--close-5"></i>
+                </button>
+              </div>
+
+              <form class="form" action="">
+
+                <label class="label form__field-caption" for="email">E-mail</label>
+                <input class="txt-field form__field" id="email" type="text">
+
+                <label class="label form__field-caption" for="login">Логин</label>
+                <input class="txt-field form__field" id="login" type="text">
+
+                <label class="label form__field-caption" for="password">Пароль</label>
+                <input class="txt-field form__field" id="password" type="text">
+
+                <fieldset class="fieldset form__fieldset">
+                  <legend class="legend">Опции</legend>
+
+                  <div class="option option--respons form__option">
+                    <input class="u-hide" id="rememberMe" type="checkbox">
+                    <label class="option__handler" for="rememberMe">
+                      <i class="checkbox option__checkbox">
+                        <i class="ico ico--checkmark-5 checkbox__ico"></i>
+                      </i><span>Запомнить меня</span>
+                    </label>
+                  </div>
+
+                  <div class="option option--respons form__option">
+                    <input class="u-hide" id="recoverPassword" type="checkbox">
+                    <label class="option__handler" for="recoverPassword">
+                      <i class="checkbox option__checkbox">
+                        <i class="ico ico--checkmark-5 checkbox__ico"></i>
+                      </i><span>Восстановить пароль</span>
+                    </label>
+                  </div>
+
+                </fieldset>
+
+                <div class="u-half-leading-s">
+                  <button class="btn btn--ok u-h-gutter-xxs">ОK</button>
+                  <button class="btn btn--default u-h-gutter-xxs">Создать</button>
+                </div>
+
+              </form>
+
+            </div>
+
+          </li>
+        </ul>
+
+      </div>
+    </div>
+
+
+    <div class="l-content">
+      <div class="l-container grid-row">
+
+        <div class="grid-offset-8 l-main-col">
+          <div class="post post--narrow">
+            <div class="post__head">
+              <h3>Lorem ipsum dolor sit amet.</h3>
+              <div class="post__meta">23.12.15 12:00</div>
+            </div>
+            <div class="post__body">
+              <h4>p</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus minus officia aut nemo dolorem. Aperiam tenetur, itaque nisi dolore officiis accusantium, neque deleniti saepe pariatur minus! Repellat ducimus possimus consectetur?</p>
+              <h4>dfn, del, ins</h4>
+              <p><dfn>Lorem ipsum dolor</dfn> sit amet, consectetur adipisicing elit. Nihil deleniti dolore sed quae magni, quia inventore sunt in nulla harum ut, <del cite="http://blablabla.com" datatime="15-03-2015T21:41:04+04:00">aliquid ex ipsum laborum</del>, <ins cite="http://blablabla.com" datatime="15-03-2015T21:44:04+04:00">eligendi voluptas molestias nemo quaerat!</ins></p>
+              <h4>i, kbd, mark, em</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur <i>adipisicing elit</i>. Hic numquam quia facilis dicta totam similique dolorem consequuntur <kbd>Alt+Ctrl+A</kbd> necessitatibus sed magnam saepe perferendis cupiditate expedita molestias debitis dignissimos eum accusamus doloribus, corporis, officia architecto? <mark>Repudiandae nihil</mark> eaque magnam cum <em>incidunt dolorum perferendis, esse quia</em>.</p>
+              <h4>Address</h4>
+              <address>Recusandae asperiores laudantium quae rerum <a href="#">deleniti</a> est.</address>
+              <h4>abbr, a, q, b</h4>
+              <p><abbr title="Lorem ipsum dolor">LRI</abbr>, consectetur adipisicing elit. Hic numquam quia facilis dicta totam similique dolorem <a href="#">consequuntur(Ссылка)</a> necessitatibus sed magnam saepe perferendis cupiditate expedita <q>molestias debitis dignissimos eum accusamus doloribus</q>, corporis, officia architecto? <b>Repudiandae</b> nihil eaque magnam cum incidunt dolorum perferendis, esse quia. Recusandae asperiores laudantium quae rerum deleniti est.</p>
+              <h1>Lorem ipsum dolor sit amet.</h1>
+              <h2>Lorem ipsum dolor sit amet.</h2>
+              <h3>Lorem ipsum dolor sit amet.</h3>
+              <h4>Lorem ipsum dolor sit amet.</h4>
+              <h5>Lorem ipsum dolor sit amet.</h5>
+              <h6>Lorem ipsum dolor sit amet.</h6>
+              <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, aliquid.</h1>
+              <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, qui?</h2>
+              <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, aspernatur!</h3>
+              <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, dolorum!</h4>
+              <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, iusto!</h5>
+              <h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, error!</h6>
+              <h3>hr</h3>
+              <hr>
+              <h3>meter</h3>
+              <meter value="10" min="0" max="100" low="20" high="90" optimum="77">Плохо</meter>
+              <meter value="40" min="0" max="100" low="20" high="90" optimum="77">Норм</meter>
+              <meter value="75" min="0" max="100" low="20" high="90" optimum="77">Ух!</meter>
+              <meter value="91" min="0" max="100" low="20" high="90" optimum="77">Вау!</meter>
+              <meter value="100" min="0" max="100" low="20" high="90" optimum="77">x_x</meter>
+              <h3>progress</h3>
+              <progress max="100" value="75"></progress>
+              <h4>ul</h4>
+              <ul>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, qui.</li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt accusamus repellendus, voluptatem non ex adipisci nulla minima consequatur ipsa tenetur.</li>
+                <li>Lorem ipsum dolor sit amet.</li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, rerum.</li>
+              </ul>
+              <h4>ol</h4>
+              <ol>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, qui.</li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt accusamus repellendus, voluptatem non ex adipisci nulla minima consequatur ipsa tenetur.</li>
+                <li>Lorem ipsum dolor sit amet.</li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, rerum.</li>
+              </ol>
+              <h4>pre</h4>
+              <pre>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae praesentium doloribus fuga deserunt sit reprehenderit dicta, vero natus porro optio quas vitae iure labore, tempora asperiores enim voluptatibus deleniti. Magnam!</pre>
+              <h4>blockquote</h4>
+              <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident nobis dolore ad, libero, incidunt distinctio nesciunt nulla optio autem, reiciendis, dolores aliquam nihil molestias ex adipisci assumenda saepe doloribus explicabo?</blockquote>
+              <h4>cite</h4>
+              <cite>http://blablabla.com/</cite>
+              <h4>s, small, strong, sub, sup, time</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta libero sapiente nam adipisci incidunt <s>ipsa numquam sunt beatae mollitia p</s>orro tenetur <small>perspiciatis error saepe,</small> quisquam at expedita <strong>vitae laborum</strong><sub>2</sub> quaerat<sup>3</sup> dolore dolorum delectus culpa tempore tempora <time>21-03-24 12:00</time>. Reprehenderit, ipsam. Ipsam, distinctio.</p>
+              <h4>var, code, samp</h4>
+              <p>  Lorem <var>ipsum</var> dolor sit<code>font-family: roboto,sans-serif</code>amet, consectetur adipisicing elit. Rerum aspernatur dolor dolorem, <samp>atque velit hic eveniet</samp> aliquam omnis accusamus, eius!</p>
+              <h4>pre > code</h4>
+
+              <pre><code>
+              @mixin board( $color-bg:null, $color-border:null, $color-txt:null ) {
+                $color-border: hsl(238, 67%, 16%) !default;
+                $color-bg: #f5f5f5 !default;
+                $color-txt: $color-border !default;
+
+                background-color: $color-bg;
+                margin: 15px 0;
+                padding: 15px;
+                color: $color-txt;
+                border-left: 5px solid $color-border;
+              }
+              </code></pre>
+
+              <h4>pre > samp</h4>
+              <pre><samp>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto hic recusandae voluptate fugiat doloribus unde vero natus obcaecati provident iste.</samp></pre>
+              <h4>Уведомления</h4>
+              <div class="msg">Стандартное</div>
+              <div class="msg msg--info">Информируещее</div>
+              <div class="msg msg--warning">Предупреждение</div>
+              <div class="msg msg--danger">Ошибка/Опасноть</div>
+              <div class="msg msg--success">Все отлично/Успешно прошло</div>
+              <h4>dl,dt,dd</h4>
+              <dl>
+                <dt>Lorem ipsum dolor sit.</dt>
+                <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo inventore ut perferendis qui vel laborum totam quasi, accusamus quisquam architecto!</dd>
+                <dt>Lorem ipsum dolor sit.</dt>
+                <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo inventore ut perferendis qui vel laborum totam quasi, accusamus quisquam architecto!</dd>
+                <dt>Lorem ipsum dolor sit.</dt>
+                <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo inventore ut perferendis qui vel laborum totam quasi, accusamus quisquam architecto!</dd>
+                <dt>Lorem ipsum dolor sit.</dt>
+                <dd>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo inventore ut perferendis qui vel laborum totam quasi, accusamus quisquam architecto!</dd>
+              </dl>
+
+            </div>
+          </div>
+
+          <hr class="x2">
+          <div class="comments">
+
+
+            <h4 class="comments__title">Добавить комментарий</h4>
+
+            <div class="comments__add">
+
+              <a href="#" class="comments__ava">
+                <img src="img/re-l.png" alt="Re-l">
+              </a>
+
+              <form class="comments__body">
+                <textarea class="textarea comments__textarea" name="commentTxt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur consectetur, veritatis reprehenderit temporibus modi ratione nobis fugiat nihil expedita aspernatur voluptatum quisquam facilis natus fuga adipisci eligendi dolorum, soluta recusandae.</textarea>
+                <div class="u-half-leading-s">
+                  <button class="btn btn--ok">Добавить</button>
+                </div>
+              </form>
+
+            </div>
+
+
+            <h4 class="comments__title">Комментарии</h4>
+
+            <ul class="comments__box">
+
+              <li class="comments__item">
+
+                <a href="#" class="comments__ava">
+                  <img src="img/re-l.png" alt="Re-l">
+                </a>
+
+                <div class="comments__body">
+                  <a class="link comments__owner" href="#">Re-l</a>
+                  <div class="comments__meta">21-13-23 / 23:02</div>
+                  <p class="comments__txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur consectetur, veritatis reprehenderit temporibus modi ratione nobis fugiat nihil expedita aspernatur voluptatum quisquam facilis natus fuga adipisci eligendi dolorum, soluta recusandae.</p>
+                  <div class="u-half-leading-s">
+                    <button class="btn btn--default u-h-gutter-xxs" type="button">Ответить</button>
+                    <button class="btn btn--default u-h-gutter-xxs" type="button">Изменить</button>
+                    <button class="btn btn--default u-h-gutter-xxs" type="button">Удалить</button>
+                  </div>
+                </div>
+
+                <ul class="comments__box comments__box--nested">
+                  <hr>
+
+                  <li class="comments__item">
+
+                    <a href="#" class="comments__ava">
+                      <img src="img/re-l.png" alt="Re-l">
+                    </a>
+
+                    <div class="comments__body">
+                      <a class="link comments__owner" href="#">Re-l</a>
+                      <div class="comments__meta">22-13-23 / 23:02</div>
+                      <p class="comments__txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, odit iusto voluptas consequatur? Harum adipisci iure, totam ipsum deserunt maiores distinctio tenetur, fugit dignissimos architecto dolores, molestias natus voluptates iste.</p>
+                      <div class="u-half-leading-s">
+                        <button class="btn btn--default" type="button">Ответить</button>
+                      </div>
+                    </div>
+
+                    <ul class="comments__box">
+
+                      <li class="comments__item">
+
+                        <a href="#" class="comments__ava">
+                          <img src="img/re-l.png" alt="Re-l">
+                        </a>
+
+                        <div class="comments__body">
+                          <a class="link comments__owner" href="#">Re-l</a>
+                          <div class="comments__meta">22-13-23 / 23:02</div>
+                          <p class="comments__txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, odit iusto voluptas consequatur? Harum adipisci iure, totam ipsum deserunt maiores distinctio tenetur, fugit dignissimos architecto dolores, molestias natus voluptates iste.</p>
+                          <div class="u-half-leading-s">
+                            <button class="btn btn--default" type="button">Ответить</button>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+
+              <li class="comments__item">
+
+                <a href="#" class="comments__ava">
+                  <img src="img/re-l.png" alt="Re-l">
+                </a>
+
+                <div class="comments__body">
+                  <a class="link comments__owner" href="#">Re-l</a>
+                  <div class="comments__meta">21-13-23 / 23:02</div>
+                  <p class="comments__txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur consectetur, veritatis reprehenderit temporibus modi ratione nobis fugiat nihil expedita aspernatur voluptatum quisquam facilis natus fuga adipisci eligendi dolorum, soluta recusandae.</p>
+                  <div class="u-half-leading-s">
+                    <button class="btn btn--default" type="button">Ответить</button>
+                  </div>
+                </div>
+              </li>
+
+              <li class="comments__item">
+
+                <div class="msg msg--info">
+                  <a class="link comments__owner" href="#">Re-l</a> удалил свой комментарий
+                </div>
+
+                <ul class="comments__box comments__box--nested">
+                  <hr>
+
+                  <li class="comments__item">
+
+                    <a href="#" class="comments__ava">
+                      <img src="img/re-l.png" alt="Re-l">
+                    </a>
+
+                    <div class="comments__body">
+                      <a class="link comments__owner" href="#">Re-l</a>
+                      <div class="comments__meta">22-13-23 / 23:02</div>
+                      <p class="comments__txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, odit iusto voluptas consequatur? Harum adipisci iure, totam ipsum deserunt maiores distinctio tenetur, fugit dignissimos architecto dolores, molestias natus voluptates iste.</p>
+                      <div class="u-half-leading-s">
+                        <button class="btn btn--default" type="button">Ответить</button>
+                      </div>
+                    </div>
+
+                    <div class="msg msg--info">
+                      <a class="link comments__owner" href="#">Re-l</a> удалил свой комментарий
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="grid-offset-4 l-sidebar">
+          <div class="widget u-v-gutter-m">
+
+            <h5 class="widget__title">Lorem ipsum dolor.</h5>
+
+            <ul class="widget__box">
+
+              <li class="widget__item">
+                <a class="link" href="#">Lorem ipsum dolor.</a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+              </li>
+
+              <li class="widget__item">
+                <a class="link" href="#">Lorem ipsum dolor.</a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+              </li>
+
+              <li class="widget__item">
+                <a class="link" href="#">Lorem ipsum dolor.</a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+              </li>
+            </ul>
+          </div>
+
+
+          <div class="widget u-v-gutter-m">
+
+            <h5 class="widget__title">Lorem ipsum dolor.</h5>
+
+            <ul class="widget__box">
+
+              <li class="widget__item">
+                <a class="link" href="#">Lorem ipsum dolor.</a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+              </li>
+
+              <li class="widget__item">
+                <a class="link" href="#">Lorem ipsum dolor.</a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+              </li>
+
+              <li class="widget__item">
+                <a class="link" href="#">Lorem ipsum dolor.</a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="l-footer">
+    <div class="l-container">
+      <div class="footer">
+        <div class="footer__right-side">
+          <a class="link" href="index.html">Индекc</a> /
+          <a class="link" href="post.html">Пост</a> /
+          <a class="link" href="user-personal-page.html">Профиль Л.</a> /
+          <a class="link" href="user-public-page.html">Профиль П.</a>
+        </div>
+        <div class="footer__left-side">@copyright</div>
+      </div>
+    </div>
+  </div>
+
+  <![if !(lte IE 9)]>
+  <script type="text/javascript">
+
+  ;(function(){
+
+    var toggles = document.querySelectorAll(".js-nav-toggle");
+    var dropdownToggles = document.querySelectorAll(".js-dropdown-toggle");
+    var closeBtns = document.querySelectorAll(".js-box-close");
+
+    responsBtn();
+    window.onresize = function(){
+      responsBtn();
+    };
+
+    Array.prototype.forEach.call(closeBtns,function(btn){
+      btn.addEventListener("click",function(e){
+        e.preventDefault();
+        var box = document.querySelector("[data-box='"+this.dataset["ownerBox"]+"']");
+        box.parentElement.classList.remove("pointer");
+        box.style.display = "none";
+
+      });
+    });
+
+    Array.prototype.forEach.call(toggles,function(toggle){
+      toggle.addEventListener("click",function(e){
+        e.preventDefault();
+        displayToggle(this.parentElement.querySelector(".js-dropdown"));
+        this.parentElement.classList.toggle("pointer");
+      });
+    });
+
+    Array.prototype.forEach.call(dropdownToggles,function(toggle){
+      toggle.addEventListener("click",function(e){
+        var parent = this.parentElement;
+        var dropdownBox, limit = 5;
+        e.preventDefault();
+        while(!dropdownBox && --limit) {
+          parent = parent.parentElement;
+          dropdownBox = parent.querySelector(".js-dropdown");
+        }
+        displayToggle(dropdownBox);
+      });
+    });
+
+    function displayToggle( el ) {
+      if(getComputedStyle(el).display !== "none") el.style.display = "none";
+      else el.style.display = "block";
+    }
+
+    function responsBtn() {
+      var responsBtnBox = document.querySelectorAll(".js-respons-btn");
+      var forEach = Array.prototype.forEach;
+
+      forEach.call(responsBtnBox, function(box){
+        if(!box.dataset.width) box.dataset.width = box.clientWidth;
+        var btnGroup = box.querySelector(".btn-group");
+        var toggle = box.querySelector(".js-dropdown-toggle");
+        var boxWidth = Number(box.dataset.width);
+        var parentWidth = box.parentElement.clientWidth;
+        var maxWidth;
+
+        if(boxWidth > parentWidth) maxWidth = parentWidth - toggle.offsetWidth - 5;
+        else maxWidth = boxWidth - toggle.offsetWidth;
+
+        if(btnGroup.offsetWidth > maxWidth) {
+          var len = btnGroup.children.length;
+          var lastChild = btnGroup.querySelector(".btn.is-last") || btnGroup.children[len-1];
+          var calc = 0;
+          var cnt = box.querySelector(".js-dropdown");
+
+          while(btnGroup.offsetWidth - calc > maxWidth) {
+              var li = document.createElement("li");
+              var link = document.createElement("a");
+
+              li.classList.add("dropdown-box__item");
+              link.classList.add("dropdown-box__link");
+              link.innerHTML = lastChild.innerHTML;
+              link.href = "#";
+              if(!lastChild.dataset.width) lastChild.dataset.width = lastChild.offsetWidth;
+              lastChild.style.display = "none";
+              lastChild.classList.remove("is-last");
+              calc += lastChild.offsetWidth;
+              lastChild = lastChild.previousElementSibling;
+              lastChild.classList.add("is-last");
+              li.appendChild(link);
+              cnt.appendChild(li);
+          }
+        }
+
+        else {
+          var len = btnGroup.children.length;
+          var calc = 0;
+          var cnt = box.querySelector(".js-dropdown");
+          var cntLen = cnt.children.length;
+          ///console.log(maxWidth,boxWidth,parentWidth);
+
+
+          for(var i = 1; i <= len ;i++) {
+            var lastBtn = btnGroup.querySelector(".btn.is-last"),
+                nextBtn,
+                nextBtnWidth;
+
+            if(!lastBtn) return;
+            nextBtn = lastBtn.nextElementSibling;
+            nextBtnWidth = Number(nextBtn.dataset.width);
+
+            if(btnGroup.offsetWidth + nextBtnWidth <= maxWidth) {
+              var li = cnt.children[cntLen-i];
+
+              cnt.removeChild(li);
+              nextBtn.style.display = "inline-block";
+              nextBtn.classList.add("is-last");
+              lastBtn.classList.remove("is-last");
+            } else break;
+          }
+        }
+      });
+    }
+
+  })();
+
+  </script>
+  <![endif]>
+
+
+</body>
+</html>
