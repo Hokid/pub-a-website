@@ -8,13 +8,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="css/style.css">
-  <!--   <![if !(lte IE 9)]>
+    <!--<![if !(lte IE 9)]>
       <script>
         if(RegExp && !navigator.userAgent.match(/MSIE [1-9]/))
           document.documentElement.classList.add("IE");
       </script>
     <![endif]> -->
-    <!--[if lte IE 8]><script src ="js/lib/respond.min.js" type="text/javascript"></script><![endif]-->
+    <!--[if lte IE 8]><script src ="js/vendors/respond.min.js" type="text/javascript"></script>
+      <script src ="js/ie.js" type="text/javascript"></script><![endif]-->
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,700">
   </head>
 
@@ -61,30 +62,36 @@
 
           <li class="nav__item u-half-leading-s u-h-gutter-s">
 
-            <button class="btn btn--default js-nav-toggle" type="button">
+            <button class="btn btn--default js-dropdown-toggle" type="button">
               <i class="ico ico--checkmark-2 btn__ico"></i>Вход
             </button>
 
-            <div class="dropdown-box dropdown-box--right nav__dropdown-box js-dropdown js-box" data-box="0">
+            <div class="dropdown-box dropdown-box--right nav__dropdown-box js-dropdown">
 
               <div class="dropdown-box__actions">
-                <button class="round-btn round-btn--danger js-box-close" data-owner-box="0" type="button">
+                <button class="round-btn round-btn--danger js-dropdown-close" type="button">
                   <i class="ico ico--close-5"></i>
                 </button>
               </div>
 
               <form class="form" action="">
 
-                <label class="label form__field-caption" for="email">E-mail</label>
-                <input class="txt-field form__field" id="email" type="text">
+                <div class="u-v-gutter-xs">
+                  <label class="label form__field-caption" for="email">E-mail</label>
+                  <input class="txt-field form__field" id="email" type="text">
+                </div>
 
-                <label class="label form__field-caption" for="login">Логин</label>
-                <input class="txt-field form__field" id="login" type="text">
+                <div class="u-v-gutter-xs">
+                  <label class="label form__field-caption" for="login">Логин</label>
+                  <input class="txt-field form__field" id="login" type="text">
+                </div>
 
-                <label class="label form__field-caption" for="password">Пароль</label>
-                <input class="txt-field form__field" id="password" type="text">
+                <div class="u-v-gutter-xs">
+                  <label class="label form__field-caption" for="password">Пароль</label>
+                  <input class="txt-field form__field" id="password" type="text">
+                </div>
 
-                <fieldset class="fieldset form__fieldset">
+                <fieldset class="fieldset form__fieldset u-v-gutter-xs">
                   <legend class="legend">Опции</legend>
 
                   <div class="option option--respons form__option">
@@ -204,9 +211,7 @@
           </div>
 
 
-          <hr>
-
-          <table class="item-box">
+          <table class="item-box u-v-gutter-xs">
 
              <caption class="item-box__title">Публикации</caption>
 
@@ -215,26 +220,28 @@
               <tr class="item-box__row">
                 <td class="item-box__cell item-box__cell--fill" colspan="2">
 
-                  <small>Выбрано: 2/10</small>
+                  <div class="item-box__left-bar">
+                    <small class="iten-box__label">Выбрано: 2/10</small>
 
-                  <div class="select u-v-top u-h-gutter-xxs">
-                    <div class="btn-group">
-                      <button class="btn btn--default btn--small" type="button">Выбрать все</button><button class="btn btn--default btn--small js-dropdown-toggle" type="button">
-                        <i class="ico ico--arrow-down btn__only-ico"></i>
-                      </button>
+                    <div class="select select--respons item-box__select">
+                      <div class="btn-group">
+                        <span class="btn btn--default btn--small">Выбрать все</span><button class="btn btn--default btn--small js-dropdown-toggle" type="button">
+                          <i class="ico ico--arrow-down btn__only-ico"></i>
+                        </button>
+                      </div>
+                      <ul class="dropdown-box dropdown-box--right js-dropdown">
+                        <li class="dropdown-box__item"><a href="#" class="dropdown-box__link">Сбросить выбор</a></li>
+                      </ul>
                     </div>
-                    <ul class="dropdown-box dropdown-box--right js-dropdown">
-                      <li class="dropdown-box__item"><a href="#" class="dropdown-box__link">Сбросить выбор</a></li>
-                    </ul>
                   </div>
 
-                    <div class="u-pull-right">
+                    <div class="item-box__right-bar">
 
-                      <small class="u-h-gutter-xxs">Показать</small>
+                      <small class="iten-box__label">Показать</small>
 
-                      <div class="select u-v-top u-h-gutter-xxs">
+                      <div class="select select--respons item-box__select">
                         <div class="btn-group">
-                          <button class="btn btn--default btn--small" type="button">Новые</button><button class="btn btn--default btn--small js-dropdown-toggle" type="button">
+                          <span class="btn btn--default btn--small">Новые</span><button class="btn btn--default btn--small js-dropdown-toggle" type="button">
                             <i class="ico ico--arrow-down btn__only-ico"></i>
                           </button>
                         </div>
@@ -277,7 +284,7 @@
 
               <tr class="item-box__row">
                 <td class="item-box__cell" colspan="2">
-                  <h4><a class="link" href="#">Lorem ipsum dolor sit amet.</a></h4>
+                  <p><b><a class="link" href="#">Lorem ipsum dolor sit amet.</a></b></p>
                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nulla earum doloremque vel impedit expedita cupiditate molestias minus voluptatibus commodi.</p>
                 </td>
               </tr>
@@ -314,7 +321,7 @@
 
               <tr class="item-box__row">
                 <td class="item-box__cell" colspan="2">
-                  <h4><a class="link" href="#">Lorem ipsum dolor sit amet.</a></h4>
+                  <p><b><a class="link" href="#">Lorem ipsum dolor sit amet.</a></b></p>
                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nulla earum doloremque vel impedit expedita cupiditate molestias minus voluptatibus commodi.</p>
                 </td>
               </tr>
@@ -351,7 +358,7 @@
 
               <tr class="item-box__row">
                 <td class="item-box__cell" colspan="2">
-                  <h4><a class="link" href="#">Lorem ipsum dolor sit amet.</a></h4>
+                  <p><b><a class="link" href="#">Lorem ipsum dolor sit amet.</a></b></p>
                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi nulla earum doloremque vel impedit expedita cupiditate molestias minus voluptatibus commodi.</p>
                 </td>
               </tr>
@@ -387,128 +394,8 @@
   </div>
 
   <![if !(lte IE 9)]>
-  <script type="text/javascript">
-
-  ;(function(){
-
-    var toggles = document.querySelectorAll(".js-nav-toggle");
-    var dropdownToggles = document.querySelectorAll(".js-dropdown-toggle");
-    var closeBtns = document.querySelectorAll(".js-box-close");
-
-    responsBtn();
-    window.onresize = function(){
-      responsBtn();
-    };
-
-    Array.prototype.forEach.call(closeBtns,function(btn){
-      btn.addEventListener("click",function(e){
-        e.preventDefault();
-        var box = document.querySelector("[data-box='"+this.dataset["ownerBox"]+"']");
-        box.parentElement.classList.remove("pointer");
-        box.style.display = "none";
-
-      });
-    });
-
-    Array.prototype.forEach.call(toggles,function(toggle){
-      toggle.addEventListener("click",function(e){
-        e.preventDefault();
-        displayToggle(this.parentElement.querySelector(".js-dropdown"));
-        this.parentElement.classList.toggle("pointer");
-      });
-    });
-
-    Array.prototype.forEach.call(dropdownToggles,function(toggle){
-      toggle.addEventListener("click",function(e){
-        var parent = this.parentElement;
-        var dropdownBox, limit = 5;
-        e.preventDefault();
-        while(!dropdownBox && --limit) {
-          parent = parent.parentElement;
-          dropdownBox = parent.querySelector(".js-dropdown");
-        }
-        displayToggle(dropdownBox);
-      });
-    });
-
-    function displayToggle( el ) {
-      if(getComputedStyle(el).display !== "none") el.style.display = "none";
-      else el.style.display = "block";
-    }
-
-    function responsBtn() {
-      var responsBtnBox = document.querySelectorAll(".js-respons-btn");
-      var forEach = Array.prototype.forEach;
-
-      forEach.call(responsBtnBox, function(box){
-        if(!box.dataset.width) box.dataset.width = box.clientWidth;
-        var btnGroup = box.querySelector(".btn-group");
-        var toggle = box.querySelector(".js-dropdown-toggle");
-        var boxWidth = Number(box.dataset.width);
-        var parentWidth = box.parentElement.clientWidth;
-        var maxWidth;
-
-        if(boxWidth > parentWidth) maxWidth = parentWidth - toggle.offsetWidth - 5;
-        else maxWidth = boxWidth - toggle.offsetWidth;
-
-        if(btnGroup.offsetWidth > maxWidth) {
-          var len = btnGroup.children.length;
-          var lastChild = btnGroup.querySelector(".btn.is-last") || btnGroup.children[len-1];
-          var calc = 0;
-          var cnt = box.querySelector(".js-dropdown");
-
-          while(btnGroup.offsetWidth - calc > maxWidth) {
-              var li = document.createElement("li");
-              var link = document.createElement("a");
-
-              li.classList.add("dropdown-box__item");
-              link.classList.add("dropdown-box__link");
-              link.innerHTML = lastChild.innerHTML;
-              link.href = "#";
-              if(!lastChild.dataset.width) lastChild.dataset.width = lastChild.offsetWidth;
-              lastChild.style.display = "none";
-              lastChild.classList.remove("is-last");
-              calc += lastChild.offsetWidth;
-              lastChild = lastChild.previousElementSibling;
-              lastChild.classList.add("is-last");
-              li.appendChild(link);
-              cnt.appendChild(li);
-          }
-        }
-
-        else {
-          var len = btnGroup.children.length;
-          var calc = 0;
-          var cnt = box.querySelector(".js-dropdown");
-          var cntLen = cnt.children.length;
-          ///console.log(maxWidth,boxWidth,parentWidth);
-
-
-          for(var i = 1; i <= len ;i++) {
-            var lastBtn = btnGroup.querySelector(".btn.is-last"),
-                nextBtn,
-                nextBtnWidth;
-
-            if(!lastBtn) return;
-            nextBtn = lastBtn.nextElementSibling;
-            nextBtnWidth = Number(nextBtn.dataset.width);
-
-            if(btnGroup.offsetWidth + nextBtnWidth <= maxWidth) {
-              var li = cnt.children[cntLen-i];
-
-              cnt.removeChild(li);
-              nextBtn.style.display = "inline-block";
-              nextBtn.classList.add("is-last");
-              lastBtn.classList.remove("is-last");
-            } else break;
-          }
-        }
-      });
-    }
-
-  })();
-
-  </script>
+  <script src="js/vendors/jquery-1.11.2.js" type="text/javascript"></script>
+  <script src="js/script.js" type="text/javascript"></script>
   <![endif]>
 
 
