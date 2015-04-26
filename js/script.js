@@ -32,7 +32,7 @@ window.aWebsite = {
  *
  *  callback - Callback - функция обратного вызова.
  *
- *  jСallback  - объект Callbacks jQuery.
+ *  jСallback - объект Callbacks jQuery.
  *
  *  jObject - объект jQuery
  *
@@ -45,7 +45,10 @@ window.aWebsite = {
 
   var root = document,
       rootBody = root.body,
-      rootHTML = root.documentElement;
+      rootHTML = root.documentElement,
+      dropdownSelector = '.js-dropdown';
+      toggleSelector = '.js-dropdown-toggle';
+      closeBtnSelector = '.js-dropdown-close';
 
 
 
@@ -56,40 +59,40 @@ window.aWebsite = {
    */
 
   /**
-   * Является ли anytype типом dropdown.
+   * Соответствует ли anytype типу dropdown.
    *
    * @param  {anytype} anytype
    * @return {Boolean}
    */
 
   function isDropdown(anytype) {
-    return isElement(anytype) && $(anytype).is('.js-dropdown');
+    return isElement(anytype) && $(anytype).is(dropdownSelector);
   }
 
   /**
-   * Является ли anytype типом toggle.
+   * Соответствует ли anytype типу toggle.
    *
    * @param  {anytype} anytype
    * @return {Boolean}
    */
 
   function isToggle(anytype) {
-    return isElement(anytype) && $(anytype).is('.js-dropdown-toggle');
+    return isElement(anytype) && $(anytype).is(toggleSelector);
   }
 
   /**
-   * Является ли anytype типом closeBtn.
+   * Соответствует ли anytype типу closeBtn.
    *
    * @param  {anytype} anytype
    * @return {Boolean}
    */
 
   function isCloseBtn(anytype) {
-    return isElement(anytype) && $(anytype).is('.js-dropdown-close');
+    return isElement(anytype) && $(anytype).is(closeBtnSelector);
   }
 
   /**
-   * Является ли anytype типом root.
+   * Соответствует ли anytype типу root.
    *
    * @param  {any type} anytype
    * @return {Boolean}
@@ -100,7 +103,7 @@ window.aWebsite = {
   }
 
   /**
-   * Является ли anytype типом data.
+   * Соответствует ли anytype типу data.
    *
    * @param  {anytype} anytype
    * @return {Boolean}
@@ -123,7 +126,7 @@ window.aWebsite = {
   }
 
   /**
-   * Является ли anytype типом node.
+   * Соответствует ли anytype типу node.
    *
    * @param  {anytype} anytype
    * @return {Boolean}
@@ -134,7 +137,7 @@ window.aWebsite = {
   }
 
   /**
-   * Является ли anytype типом element.
+   * Соответствует ли anytype типу element.
    *
    * @param  {anytype} anytype
    * @return {Boolean}
@@ -163,6 +166,26 @@ window.aWebsite = {
    *             API
    * --------------------------------
    */
+
+
+   /**
+    * Возвращает строку содержащую тип элемента, либо undefined, если
+    * параметр element не известен.
+    *
+    * @param  {element} element
+    * @return {string, undefined}
+    */
+
+   function typeOf(element) {
+    var type;
+
+    isToggle(element) && (type = 'toggle');
+    isCloseBtn(element) && (type = 'closeBtn');
+    isDropdown(element) && (type = 'dropdown');
+    isRoot(element) && (type = 'root');
+
+    return type;
+   }
 
   /**
    * Находит для toggle ближайший dropdown.
@@ -225,10 +248,10 @@ window.aWebsite = {
    */
 
   function getContext(node) {
-    var context = root,
+    var context,
         data;
 
-    if(!isElement(node)) {
+    if(!isNode(node)) {
       return undefined;
     }
 
@@ -238,16 +261,9 @@ window.aWebsite = {
       return data.context || context;
     }
 
-    while(!isRoot(node)) {
-      node = node.parentElement;
+    context = $(node).parent().closest(dropdownSelector);
 
-      if(isDropdown(node)) {
-        context = node;
-        break;
-      }
-    }
-
-    return context;
+    return context.length ? context[0] : root;
   }
 
   /**
@@ -448,40 +464,54 @@ window.aWebsite = {
    */
 
   function getClosestTarget(element) {
-    var type = "root";
+    var target,
+        queue = [toggleSelector, closeBtnSelector, dropdownSelector, 'body'];
 
     if(!isElement(element)) {
       throw new TypeError("element должен быть element");
     }
 
-    while(true) {
+    target = $(element).closest(queue.join(','));
+    target = target.length && target[0] !== rootBody ? target[0] : root;
 
-      if(isToggle(element)) {
-        type = "toggle";
-        break;
-      }
-
-      if(isCloseBtn(element)) {
-        type = "closeBtn";
-        break;
-      }
-
-      if(isDropdown(element)) {
-        type = "dropdown";
-        break;
-      }
-
-      if(isRoot(element)) {
-        element = root;
-        break;
-      }
-
-      element = element.parentElement;
-    }
-
-    return {node: element, type: type};
+    return {node: target, type: typeOf(target)};
   }
 
+
+
+  /**
+   * --------------------------------
+   *     API для работы с HTML
+   * --------------------------------
+   */
+
+
+  /**
+   * Создаст элемент списка(li>a) и положит внутрь content(при наличии).
+   *
+   * @param  {anytype} content
+   * @param  {string} href (значение по умолчанию '#')
+   * @return {jObject}
+   */
+
+  function createItem(content, href) {
+    var href = typeof href === 'string' ? href : '#',
+        $item = $('<li class="dropdown-box__item" />'),
+        $link = $('<a href='+href+' class="dropdown-box__link" />');
+
+    !(content instanceof $) && (content = $(content));
+    content.length && $link.append(content);
+
+    return $item.append($link)[0];
+  }
+
+
+
+  /**
+   * --------------------------------
+   *           Инициализация
+   * --------------------------------
+   */
 
 
   /**
@@ -572,8 +602,229 @@ window.aWebsite = {
   // Экспорт API
 
   API.modules.dropdown = {
-    closeAll: function() { fireCallbacks(root); }
+    closeAll: function() { fireCallbacks(root); },
+    createItem: createItem,
+    getDropdownFor: getDropdownFor,
+    isOpened: isOpened,
+    closeAndClearData: closeAndClearData
   }
+
+})(window.aWebsite, jQuery);
+
+;(function(API, $) {
+
+  //TODO:
+  // * комменты
+  // * оптимизация
+
+  var timerId,
+      $items,
+      length,
+      index,
+      dropdown = API.modules.dropdown;
+
+  function getWidthWithMargin($element) {
+    var hMargins;
+
+    !($element instanceof $) && ($element = $($element));
+
+    hMargins = parseInt($element.css('margin-left'))
+               +
+               parseInt($element.css('margin-right'));
+
+    return $element.outerWidth() + hMargins;
+  }
+
+  function hideItems(items) {
+    var $lastItem,
+        $prevItem;
+
+    if(items instanceof $ && items.length) {
+      $lastItem = items.last();
+      $prevItem = items.first().prev();
+
+      if($lastItem.is('.is-last')) {
+        $lastItem.removeClass('is-last');
+      }
+
+      items.hide();
+
+      if($prevItem.length) {
+        $prevItem.addClass('is-last');
+      }
+
+      return items;
+    }
+  }
+
+  function showItems(items) {
+    var $lastItem,
+        $prevItem,
+        $nextItem;
+
+    if(items instanceof $ && items.length) {
+      $lastItem = items.last();
+      $prevItem = items.first().prev();
+
+      if($prevItem.length && $prevItem.is('.is-last')) {
+        $prevItem.removeClass('is-last');
+      }
+
+      items.show();
+
+      if($lastItem.next().length) {
+        $lastItem.addClass('is-last');
+      }
+
+      return items;
+    }
+  }
+
+  function run(element) {
+    var $horNav = $(element),
+        $box = $horNav.find('> .js-hor-nav-box'),
+        $toggle = $box.next().find('> .js-dropdown-toggle'),
+        $dropdown,
+        $boxChildren,
+        $currentChild,
+        $itemsArray,
+        length,
+        isLast = false,
+        maxWidth,
+        boxOuterWidth,
+        isToggleHidden,
+        toggleOuterWidth,
+        currentWidth;
+
+    if($box.length === 1 && $toggle.length === 1) {
+      maxWidth = $horNav.width();
+      boxOuterWidth = getWidthWithMargin($box);
+      isToggleHidden = $toggle.css('display') === 'none';
+
+      if(isToggleHidden && (boxOuterWidth < maxWidth)){
+        return;
+      }
+
+      toggleOuterWidth = isToggleHidden ? 0 : getWidthWithMargin($toggle);
+      currentWidth = boxOuterWidth + toggleOuterWidth;
+      $currentChild = $box.find('> .is-last');
+      !$currentChild.length && ($currentChild = $box.find('> :last'));
+      $itemsArray = $();
+      $dropdown = $toggle.next();
+
+      if(currentWidth > maxWidth) {
+
+        isToggleHidden && (currentWidth += getWidthWithMargin($toggle));
+
+        do {
+          currentWidth -= getWidthWithMargin($currentChild);
+          $itemsArray = $itemsArray.add($currentChild);
+          $currentChild = $currentChild.prev();
+        } while(currentWidth > maxWidth && $currentChild.length);
+
+
+        hideItems($itemsArray);
+        isToggleHidden && $toggle.show();
+
+        $dropdown.prepend(
+          $itemsArray.map(
+            function(index, element) {
+              return dropdown.createItem($(element).contents().clone()); /* !!! */
+            }
+          )
+        );
+
+      }
+
+      else if(currentWidth < maxWidth) {
+
+        while(!isLast) {
+
+          $currentChild = $currentChild.next();
+          currentWidth += getWidthWithMargin($currentChild);
+
+          if($currentChild.is(':last-child')) {
+
+            if(currentWidth - toggleOuterWidth < maxWidth) {
+              isLast = true;
+            }
+
+            else {
+              break;
+            }
+          }
+
+          if(isLast || currentWidth < maxWidth) {
+            $itemsArray = $itemsArray.add($currentChild);
+          }
+        }
+
+        if(isLast) {
+          dropdown.closeAndClearData($dropdown[0]);
+          $toggle.hide();
+        }
+
+        if(length = $itemsArray.length) {
+          showItems($itemsArray);
+
+          while(length--) {
+            $dropdown.find('> :first').remove();
+          }
+        }
+      }
+    }
+  }
+
+  function runHandler() {
+    if(length > index) {
+      run($items[index++]);
+      timerId = setTimeout(runHandler, 0);
+    }
+    // else {
+    //   console.timeEnd('===');
+    //   return window.next && window.next();
+    // }
+  }
+
+  function horNavEventHandler() {
+    //console.time('===');
+    clearTimeout(timerId);
+
+    $items = $('.js-hor-nav');
+    length = $items.length;
+    index = 0;
+
+    timerId = setTimeout(runHandler, 250);
+  }
+
+  $(horNavEventHandler);
+  $(window).resize(horNavEventHandler);
+
+  // window.test = function(time, size) {
+  //   var time = time;
+  //   var defaultSize = false;
+  //   var $cnt = $('#COL');
+  //   var size = size;
+
+  //   window.next = function() {
+  //     if(defaultSize) {
+  //       $cnt.css('width', 'auto');
+  //       defaultSize = false;
+  //     }
+  //     else {
+  //       $cnt.css('width', size);
+  //       defaultSize = true;
+  //     }
+  //     --time && horNavEventHandler();
+  //   };
+
+  //   horNavEventHandler();
+  // }
+
+  // window.next;
+  // window.stop = function() {
+  //   window.next = undefined;
+  // }
 
 })(window.aWebsite, jQuery);
 
@@ -581,19 +832,19 @@ window.aWebsite = {
 //= include_tree plugins
 ;(function($){
 
-  function isInHeader(toggle) {
-    return Boolean($(toggle).parents(".header,.l-header").length);
+  function inHeader(toggle) {
+    return Boolean($(toggle).closest(".header,.l-header").length);
   }
 
   function navEventHandler(e, data) {
-    if(!isInHeader(data.toggle)) return;
+    if(data.context !== document || !inHeader(data.toggle)) return;
 
     if(e.namespace === "open") {
-      $(data.toggle).addClass("pointer");
+      $(data.toggle).parent().addClass("pointer");
     }
 
     else if(e.namespace === "close") {
-      $(data.toggle).removeClass("pointer");
+      $(data.toggle).parent().removeClass("pointer");
     }
   }
 

@@ -36,7 +36,7 @@
             <li class="nav__item">
 
 
-              <button class="btn btn--default nav__toggle js-nav-toggle" type="button">
+              <button class="btn btn--default nav__toggle js-dropdown-toggle" type="button">
                 <i class="ico ico--nav-1 btn__only-ico"></i>
               </button>
 
@@ -201,13 +201,15 @@
         <div class="user-col">
 
 
-          <div class="u-respons-h-list js-respons-btn u-half-leading-s">
-            <div class="btn-group">
+          <div class="hor-nav u-half-leading-s js-hor-nav">
+            <div class="btn-group js-hor-nav-box">
               <button class="btn btn--default" type="button">Мои Посты</button><button class="btn btn--default" type="button">Мои Комментарии</button><button class="btn btn--default" type="button">Мои Сообщения</button><button class="btn btn--default" type="button">Просто Вкладка</button><button class="btn btn--default" type="button">Просто Вкладка</button><button class="btn btn--default" type="button">Просто Вкладка</button>
-            </div><button class="btn btn--default u-h-gutter-xs js-dropdown-toggle" type="button">
-              <i class="ico ico--more-v btn__only-ico"></i>
-            </button>
-            <ul class="dropdown-box dropdown-box--right js-dropdown"></ul>
+            </div><div class="u-relative u-inline-block">
+              <button class="btn btn--default hor-nav__toggle js-dropdown-toggle" type="button">
+                <i class="ico ico--more-v btn__only-ico"></i>
+              </button>
+              <ul class="dropdown-box dropdown-box--right js-dropdown"></ul>
+            </div>
           </div>
 
 
